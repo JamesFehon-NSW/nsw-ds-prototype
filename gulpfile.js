@@ -42,6 +42,11 @@ const postcssProcessors = [
   cssnano,
 ]
 
+function moveImages() {
+  return src(config.images.src)
+    .pipe(dest(config.images.build))
+}
+
 function compileSvg() {
   return src(config.svg.src)
     .pipe(svgSprite(config.svg.svgSprite))
@@ -226,6 +231,7 @@ const javascript = series(lintJavascript, compileJS)
 function watchFiles(done) {
   watch(config.scss.watch, series(styles, reload))
   watch(config.js.watch, series(javascript, reload))
+  watch(config.images.watch, series(moveImages, reload))
   watch(config.svg.watch, series(compileSvg, reload))
   watch(config.metalSmith.watch, series(metalsmithBuild, reload))
   done()
@@ -237,6 +243,7 @@ const build = series(
   metalsmithBuild,
   styles,
   javascript,
+  moveImages,
   compileSvg,
   renamePath,
   injectSVG,
@@ -249,6 +256,7 @@ const dev = series(
   metalsmithBuild,
   styles,
   javascript,
+  moveImages,
   compileSvg,
   watchFiles,
   browserSync,
@@ -263,6 +271,7 @@ const deploy = series(
 exports.scss = buildStyles // gulp sass - compiles the sass
 exports.watch = watchFiles // gulp watch - watches the files
 exports.lint = lintStyles // gulp lint - lints the sass
+exports.images = moveImages // gulp images - moves images
 exports.svg = compileSvg // gulp svg - creates svg sprite
 exports.build = build // gulp build - builds the files
 exports.surge = deploy // gulp surge - builds the files and deploys to surge

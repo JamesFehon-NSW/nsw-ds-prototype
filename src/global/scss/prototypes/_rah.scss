@@ -1,0 +1,36 @@
+//Research activities hub
+
+.nsw-rah-icon-list {
+  @include component-spacing();
+  list-style-type: none;
+  padding: 0;
+  margin-left: rem(-24px);
+  margin-right: rem(-24px);
+  display: flex;
+
+  li {
+    padding: 0 rem(24px);
+    display: flex;
+    align-items: center;
+  }
+
+  i {
+    margin-right: rem(8px);
+  }
+}
+
+.nsw-rah-text-list {
+  @include component-spacing();
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    padding: rem(8px) 0;
+    display: flex;
+  }
+
+  strong {
+    min-width: rem(80px);
+    text-transform: uppercase;
+  }
+}

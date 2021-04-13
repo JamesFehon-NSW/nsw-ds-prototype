@@ -161,6 +161,20 @@
   @include text-link;
 }
 
+.nsw-image {
+  display: block;
+  width: 100%;
+}
+
+.nsw-icon-text {
+  display: flex;
+  align-items: center;
+
+  i {
+    margin-right: rem(8px);
+  }
+}
+
 h1,
 h2,
 h3,

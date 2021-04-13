@@ -53,6 +53,10 @@
     color: map-get($icon-colors, warning);
   }
 
+  &--dark {
+    color: $dark80;
+  }
+
   &--rotate-90 {
     transform: rotate(90deg);
   }
