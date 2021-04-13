@@ -137,6 +137,10 @@ function metalsmithBuild(callback) {
     templates: {
       pattern: config.metalSmith.collection.templates.pattern,
       sortBy: sortByAlpha,
+    },
+    prototypes: {
+      pattern: config.metalSmith.collection.prototypes.pattern,
+      sortBy: sortByAlpha,
     }
   }))
   metalsmith.use(inplace(config.metalSmith.inplace))

@@ -22,7 +22,7 @@ layout: layout.hbs
 								<h2>Components</h2>
 								<ul>
 									{{#each collections.components}}
-									<li><a class="navigation-nav-item" href="{{change-extention path}}" target="_blank">{{title}}</a></li>
+									<li><a href="{{change-extention path}}" target="_blank">{{title}}</a></li>
 									{{/each}}
 								</ul>
 						    </div>
@@ -30,14 +30,21 @@ layout: layout.hbs
 								<h2>Styles</h2>
 								<ul>
 									{{#each collections.styles}}
-									<li><a class="navigation-nav-item" href="{{change-extention path}}" target="_blank">{{title}}</a></li>
+									<li><a href="{{change-extention path}}" target="_blank">{{title}}</a></li>
 									{{/each}}
 								</ul>
 
 								<h2>Demo pages</h2>
 								<ul>
 									{{#each collections.templates}}
-									<li><a class="navigation-nav-item" href="{{change-extention path}}" target="_blank">{{title}}</a></li>
+									<li><a href="{{change-extention path}}" target="_blank">{{title}}</a></li>
+									{{/each}}
+								</ul>
+
+								<h2>Prototypes</h2>
+								<ul>
+									{{#each collections.prototypes}}
+									<li><a href="{{change-extention path}}" target="_blank">{{title}}</a></li>
 									{{/each}}
 								</ul>
 					    </div>

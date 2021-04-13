@@ -75,6 +75,9 @@
       "templates": {
         "pattern": ["templates/**/*.hbs", "!templates/**/_*.hbs"]
       },
+      "prototypes": {
+        "pattern": ["prototypes/**/*.hbs", "!prototypes/**/_*.hbs"]
+      },
       "pages": {
         "pattern": ["pages/**/*.hbs", "!pages/**/_*.hbs"]
       }
